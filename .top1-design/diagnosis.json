@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "project": "/Users/xiongxinwei/data/mine/cubxxw/personal/top1-design/examples/taste-view",
+  "strategy": {
+    "mode": "greenfield",
+    "confidence": 0.62,
+    "source": "inferred",
+    "rationale": [
+      "small UI surface with no detected design-system infrastructure"
+    ]
+  },
+  "capability": {
+    "review": {
+      "status": "ready",
+      "reason": "a verified or explicit browser target is available"
+    },
+    "automatic_modification": {
+      "status": "supported",
+      "adapter": "react-tailwind",
+      "reasons": [
+        "supported first-release stack and build boundary detected"
+      ]
+    }
+  },
+  "change_policy": {
+    "recommended_level": 5,
+    "recommended_label": "product design direction",
+    "maximum_without_new_authority": 5,
+    "maximum_label": "product design direction",
+    "levels": {
+      "0": "review only",
+      "1": "single surface",
+      "2": "shared components",
+      "3": "design tokens",
+      "4": "visual system",
+      "5": "product design direction"
+    },
+    "rule": "choose the highest-return level whose blast radius is testable and reversible"
+  },
+  "signals": {
+    "framework": "react",
+    "tailwind": true,
+    "source_file_count": 15,
+    "component_file_count": 0,
+    "test_file_count": 1,
+    "design_token_file_count": 0,
+    "storybook": false,
+    "component_library": false,
+    "end_to_end_tests": false,
+    "accessibility_tooling": true,
+    "visual_regression": false,
+    "continuous_integration": false,
+    "package_scripts": [
+      "build",
+      "db:generate",
+      "dev",
+      "lint",
+      "start",
+      "test"
+    ],
+    "has_dev_script": true,
+    "has_build_script": true,
+    "has_test_script": true,
+    "monorepo": false
+  },
+  "boundaries": {
+    "declared": {},
+    "always_requires_confirmation": [
+      "product strategy or primary workflow changes",
+      "factual claims, pricing, analytics, publishing, or destructive actions",
+      "changes above maximum_without_new_authority"
+    ]
+  },
+  "next_step": "run browser review and create isolated candidates",
+  "disclaimer": "Repository signals select a safe operating posture; they do not prove organizational maturity or authorize changes."
+}

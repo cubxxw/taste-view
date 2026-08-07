@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "run_id": "taste-view-2026-08-07",
+  "evaluation": "evaluation.json",
+  "coverage": {
+    "required_check_families": [
+      "visual",
+      "interaction",
+      "responsive",
+      "accessibility",
+      "functional"
+    ],
+    "required_viewports": [
+      "desktop",
+      "mobile"
+    ],
+    "required_flows": [
+      "sample-review",
+      "stage-tabs"
+    ],
+    "required_states": [
+      "default",
+      "focus",
+      "analyzing",
+      "error",
+      "success",
+      "compile",
+      "release",
+      "reduced-motion"
+    ],
+    "required_accessibility_methods": [
+      "automated",
+      "keyboard"
+    ]
+  },
+  "checks": [
+    {
+      "id": "visual-full-page",
+      "family": "visual",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#visual",
+        "design/decision-tree.md"
+      ]
+    },
+    {
+      "id": "interaction-default",
+      "family": "interaction",
+      "state": "default",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states"
+      ]
+    },
+    {
+      "id": "interaction-focus",
+      "family": "interaction",
+      "state": "focus",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states"
+      ]
+    },
+    {
+      "id": "interaction-analyzing",
+      "family": "interaction",
+      "state": "analyzing",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "app/taste-lab.tsx"
+      ]
+    },
+    {
+      "id": "interaction-error",
+      "family": "interaction",
+      "state": "error",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states"
+      ]
+    },
+    {
+      "id": "interaction-success",
+      "family": "interaction",
+      "state": "success",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states"
+      ]
+    },
+    {
+      "id": "interaction-compile-motion",
+      "family": "interaction",
+      "state": "compile",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#motion-and-webgl"
+      ]
+    },
+    {
+      "id": "interaction-release-motion",
+      "family": "interaction",
+      "state": "release",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#motion-and-webgl"
+      ]
+    },
+    {
+      "id": "interaction-reduced-motion",
+      "family": "interaction",
+      "state": "reduced-motion",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#motion-and-webgl",
+        "app/verdict-field.tsx"
+      ]
+    },
+    {
+      "id": "responsive-desktop",
+      "family": "responsive",
+      "viewport": "desktop",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#responsive"
+      ]
+    },
+    {
+      "id": "responsive-mobile",
+      "family": "responsive",
+      "viewport": "mobile",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#responsive"
+      ]
+    },
+    {
+      "id": "accessibility-automated",
+      "family": "accessibility",
+      "method": "automated",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#accessibility",
+        "tests/rendered-html.test.mjs"
+      ]
+    },
+    {
+      "id": "accessibility-keyboard",
+      "family": "accessibility",
+      "method": "keyboard",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#accessibility"
+      ]
+    },
+    {
+      "id": "functional-sample-review",
+      "family": "functional",
+      "flow": "sample-review",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#functional-and-build"
+      ]
+    },
+    {
+      "id": "functional-stage-tabs",
+      "family": "functional",
+      "flow": "stage-tabs",
+      "status": "pass",
+      "required": true,
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#functional-and-build"
+      ]
+    }
+  ],
+  "defects": [
+    {
+      "id": "keyboard-tabs-unreachable",
+      "family": "accessibility",
+      "severity": "severe",
+      "status": "fixed",
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states",
+        "app/taste-lab.tsx"
+      ]
+    },
+    {
+      "id": "analysis-panel-motion-desync",
+      "family": "interaction",
+      "severity": "moderate",
+      "status": "fixed",
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states",
+        "app/taste-lab.tsx"
+      ]
+    }
+  ],
+  "change_control": {
+    "within_authority": true,
+    "tests_passed": true,
+    "blast_radius_reviewed": true,
+    "rollback_ready": true
+  }
+}

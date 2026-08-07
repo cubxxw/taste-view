@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "run_id": "taste-view-2026-08-07",
+  "target": "http://localhost:3001/",
+  "mode": "persuade",
+  "rubric_version": "1.0",
+  "threshold": 95,
+  "required_depth": 4,
+  "required_hard_gates": [
+    "functional",
+    "truth",
+    "accessibility",
+    "responsive",
+    "states",
+    "motion_safety",
+    "performance"
+  ],
+  "nodes": [
+    {
+      "id": "experience",
+      "parent_id": null,
+      "scope": "complete landing experience",
+      "depth": 0,
+      "required": true,
+      "confidence": 0.8,
+      "scores": {
+        "goal_fit": 96,
+        "specificity": 96,
+        "hierarchy": 96,
+        "typography": 95,
+        "layout": 95,
+        "color_material": 95,
+        "interaction_states": 96,
+        "motion": 95,
+        "copy": 96
+      },
+      "hard_gates": {
+        "functional": true,
+        "truth": true,
+        "accessibility": true,
+        "responsive": true,
+        "states": true,
+        "motion_safety": true,
+        "performance": true
+      },
+      "evidence": [
+        "evidence/2026-08-07-release-review.md"
+      ]
+    },
+    {
+      "id": "hero-and-thesis",
+      "parent_id": "experience",
+      "scope": "hero, product thesis, and first-view composition",
+      "depth": 4,
+      "required": true,
+      "confidence": 0.8,
+      "scores": {
+        "goal_fit": 96,
+        "specificity": 97,
+        "hierarchy": 96,
+        "typography": 96,
+        "layout": 95,
+        "color_material": 95,
+        "interaction_states": 95,
+        "motion": 95,
+        "copy": 96
+      },
+      "hard_gates": {
+        "functional": true,
+        "truth": true,
+        "accessibility": true,
+        "responsive": true,
+        "states": true,
+        "motion_safety": true,
+        "performance": true
+      },
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#visual",
+        "app/page.tsx",
+        "app/globals.css"
+      ]
+    },
+    {
+      "id": "interactive-review",
+      "parent_id": "experience",
+      "scope": "sample analysis, pairwise verdict, compiled profile, and release tabs",
+      "depth": 4,
+      "required": true,
+      "confidence": 0.82,
+      "scores": {
+        "goal_fit": 97,
+        "specificity": 97,
+        "hierarchy": 95,
+        "typography": 95,
+        "layout": 95,
+        "color_material": 95,
+        "interaction_states": 97,
+        "motion": 95,
+        "copy": 96
+      },
+      "hard_gates": {
+        "functional": true,
+        "truth": true,
+        "accessibility": true,
+        "responsive": true,
+        "states": true,
+        "motion_safety": true,
+        "performance": true
+      },
+      "evidence": [
+        "evidence/2026-08-07-release-review.md#interaction-and-states",
+        "app/taste-lab.tsx",
+        "tests/rendered-html.test.mjs"
+      ]
+    },
+    {
+      "id": "release-method",
+      "parent_id": "experience",
+      "scope": "method, operating modes, Release Bar, validation targets, and claim boundary",
+      "depth": 4,
+      "required": true,
+      "confidence": 0.8,
+      "scores": {
+        "goal_fit": 97,
+        "specificity": 97,
+        "hierarchy": 95,
+        "typography": 95,
+        "layout": 95,
+        "color_material": 96,
+        "interaction_states": 95,
+        "motion": 95,
+        "copy": 97
+      },
+      "hard_gates": {
+        "functional": true,
+        "truth": true,
+        "accessibility": true,
+        "responsive": true,
+        "states": true,
+        "motion_safety": true,
+        "performance": true
+      },
+      "evidence": [
+        "evidence/2026-08-07-release-review.md",
+        ".top1-design/GOAL.md",
+        "design/decision-tree.md"
+      ]
+    }
+  ]
+}
