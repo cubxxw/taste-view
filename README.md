@@ -28,6 +28,10 @@ npm run dev
 
 Then open the URL printed by the development server.
 
+Generated `.openai/hosting.json` metadata is optional for local UI builds. If it
+exists, invalid JSON still fails the build. Database-backed routes require their
+configured D1 binding.
+
 ## Verify
 
 ```bash
