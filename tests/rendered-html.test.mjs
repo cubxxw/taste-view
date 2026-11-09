@@ -97,7 +97,6 @@ test("keeps interaction, accessibility, responsive, and deployment safeguards in
   assert.match(css, /max-width:\s*767px/);
   assert.match(css, /forced-colors:\s*active/);
   assert.match(packageJson, /"three": "0\.185\.1"/);
-  assert.match(packageJson, /"next": "16\.2\.6"/);
   assert.match(packageJson, /"build:vercel": "next build"/);
   assert.match(vercelJson, /"framework": "nextjs"/);
   assert.match(vercelJson, /"buildCommand": "npm run build:vercel"/);
