@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '22.23.2'
       - name: Resolve a candidate without running package scripts
-        run: npm update --package-lock-only --ignore-scripts --no-audit --no-fund
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
       - name: Preserve the candidate and audit before enforcing the gate
         shell: python
         run: |
