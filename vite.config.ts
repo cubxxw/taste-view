@@ -1,12 +1,33 @@
+import { readFileSync } from "node:fs";
 import vinext from "vinext";
 import { defineConfig } from "vite";
-import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   "00000000-0000-4000-8000-000000000000";
 
-const { d1, r2 } = hostingConfig;
+// Sites metadata is optional in an ordinary checkout. Local preview must not
+// require a deployment descriptor or create any remote resource.
+function readHostingBindings(): { d1?: string; r2?: string } {
+  try {
+    const value: unknown = JSON.parse(
+      readFileSync(new URL("./.openai/hosting.json", import.meta.url), "utf8"),
+    );
+    if (!value || typeof value !== "object" || Array.isArray(value)) {
+      throw new Error("Sites hosting metadata must be an object");
+    }
+    const { d1, r2 } = value as { d1?: unknown; r2?: unknown };
+    if ((d1 != null && typeof d1 !== "string") || (r2 != null && typeof r2 !== "string")) {
+      throw new Error("Sites storage binding names must be strings");
+    }
+    return { d1: d1 ?? undefined, r2: r2 ?? undefined };
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return {};
+    throw error;
+  }
+}
+
+const { d1, r2 } = readHostingBindings();
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
